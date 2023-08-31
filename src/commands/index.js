@@ -1,6 +1,8 @@
 import bashEmulator from "bash-emulator";
 import React from "react";
 
+import echo from "./echo";
+
 // the inital state of the env
 const INIT_STATE = {
   history: [],
@@ -36,7 +38,9 @@ function init() {
  * attach custom commands to the emulator
  * @param {bashEmulator instance} emu
  */
-function attachCommands(emu) {}
+function attachCommands(emu) {
+  emu.commands.echo = echo;
+}
 
 // our emulator
 const EMULATOR = init();
