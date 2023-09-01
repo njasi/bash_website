@@ -1,25 +1,25 @@
 import { useState, createRef } from "react";
 import { historyMove, runCommand, setHistoryIdx } from "../commands";
-
-
-import Results, { arrayToOutput } from "./Results";
+import { arrayToOutput } from "./Results";
 import TermPrompt from "./TermPrompt";
 
-
 // generate a function to handle the command submitting
-function generateFormHandler(output, setOutput, setCommand) {
+function generateFormHandler(add, setCommand) {
   return async (event) => {
     event.preventDefault();
+
     const command = event.target.termInput.value;
     setCommand("");
     setHistoryIdx();
+
     const result = await runCommand(command);
-    setOutput(
-      <>
-        {output}
-        <Results prompt={<TermPrompt />} command={command} result={result} />
-      </>
-    );
+    if (command === "clear") {
+      // quick fix to prevent adding the command
+      return;
+    }
+
+    let val = { command, result };
+    add(val);
   };
 }
 
@@ -51,12 +51,13 @@ function generateKeyUpHandler(setCursor) {
   };
 }
 
-function Terminal({init}) {
-  const [output, setOutput] = useState(arrayToOutput(init));
+function Terminal({ outputState, add }) {
   const [command, setCommand] = useState("");
   const [cursor, setCursor] = useState(0);
-
   const commandInput = createRef();
+
+  const output = arrayToOutput(outputState);
+
   const handleBlur = () => commandInput.current.focus();
   const handleChange = (event) => {
     setCursor(event.target.selectionStart);
@@ -66,7 +67,7 @@ function Terminal({init}) {
   return (
     <main id="term-wrap">
       <header className="output">{output}</header>
-      <form onSubmit={generateFormHandler(output, setOutput, setCommand)}>
+      <form onSubmit={generateFormHandler(add, setCommand)}>
         <label htmlFor="term-input">
           <TermPrompt />
         </label>{" "}

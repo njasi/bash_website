@@ -1,34 +1,21 @@
-import "./App.css";
-import { TermPrompt } from "./components";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch } from "react-redux";
+
+import { addOutput } from "./store/output";
 import Terminal from "./components/Terminal";
-
-const INIT_OUTPUT = [
-  {
-    prompt: <TermPrompt user={"user"} host={"computer"} />,
-    command: "ssh guest@njasi.com",
-    result: `
-Welcome to Nick Jasinski's Website
-
-* (class=green)(Github):         [https://github.com/njasi](https://github.com/njasi)
-* (class=green)(Linkedin):       [https://www.linkedin.com/in/njasi](https://www.linkedin.com/in/njasi)
-* (class=green)(Email):          [nick@jasinski3.com](mailto:nick@jasinski3.com)
-
-Expanded Security Maintenance for Applications is not enabled.
-
-7 updates can be applied immediately.
-6 of these updates are standard security updates.
-To see these additional updates run: apt list --upgradable
-
-For a list of available commands please type "(class=green bold)(help)"
-
-*** System restart required ***
-Last login: filler_time from filler_ip
-   `,
-  },
-];
+import "./App.css";
 
 function App() {
-  return <Terminal init={INIT_OUTPUT} />;
+  const { output } = useSelector((state) => ({
+    output: state.output.history,
+  }));
+
+  console.log(output);
+
+  const dispatch = useDispatch();
+  const add = (value) => dispatch(addOutput(value));
+
+  return <Terminal outputState={output} add={add} />;
 }
 
 export default App;

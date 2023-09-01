@@ -46,14 +46,22 @@ function parseLinksAndClasses(line) {
 export function arrayToOutput(results) {
   return (
     <>
-      {results.map((e, idx) => (
-        <Results
-          prompt={e.prompt === undefined ? <TermPrompt /> : e.prompt}
-          command={e.command}
-          result={e.result}
-          key={idx}
-        />
-      ))}
+      {results.map((e, idx) => {
+        return (
+          <Results
+            prompt={
+              e.prompt === undefined ? (
+                <TermPrompt />
+              ) : (
+                <TermPrompt user={e.prompt.user} host={e.prompt.host} />
+              )
+            }
+            command={e.command}
+            result={e.result}
+            key={idx}
+          />
+        );
+      })}
     </>
   );
 }

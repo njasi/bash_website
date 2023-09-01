@@ -2,6 +2,10 @@ import bashEmulator from "bash-emulator";
 import React from "react";
 
 import echo from "./echo";
+import reboot from "./reboot";
+import clear from "./clear";
+import help from "./help";
+import welcome from "./welcome";
 
 // the inital state of the env
 const INIT_STATE = {
@@ -40,10 +44,14 @@ function init() {
  */
 function attachCommands(emu) {
   emu.commands.echo = echo;
+  emu.commands.reboot = reboot;
+  emu.commands.clear = clear;
+  emu.commands.help = help;
+  emu.commands.welcome = welcome;
 }
 
 // our emulator
-const EMULATOR = init();
+export const EMULATOR = init();
 let historyIdx = 0;
 
 /**
