@@ -25,6 +25,15 @@ const INIT_STATE = {
       type: "dir",
       modified: Date.now(),
     },
+    "/home/guest/README.txt": {
+      type: "file",
+      modified: Date.now(),
+      content:`This is a basic bashlike terminal which runs in browser.
+
+It doesnt have many features (see help command), but I may add more later.
+
+Tech used: react/redux.`
+    },
   },
 };
 
