@@ -1,5 +1,5 @@
 import store from "../store";
-import { addOutput, clearOutput } from "../store/output";
+import { clearOutput } from "../store/output";
 
 function clear(env, args) {
   let exitCode = 0;
