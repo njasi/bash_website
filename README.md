@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Terminal Website
+
+A simple portfolio website I made for [njasi.com](https://njasi.com), a domain I've been sitting on for quite a while.
+
+It is hosted with github pages.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
