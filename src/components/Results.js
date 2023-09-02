@@ -1,5 +1,7 @@
 import React, { isValidElement } from "react";
 import TermPrompt from "./TermPrompt";
+import CommandBtn from "./CommandBtn";
+
 /**
  * replace markdown links with react links and split the text
  * @param {string} line: line to check
@@ -7,7 +9,7 @@ import TermPrompt from "./TermPrompt";
 function parseLinksAndClasses(line) {
   // regex to match on markdown links
   const result = line.match(
-    /(\(class=(.*)\)\(([^)]*)\)|\[([^[\]]*)\]\((.*?)\))/
+    /(\(class=(.*)\)\(([^)]*)\)|\[([^[\]]*)\]\((.*?)\)|\(command=(.*)\)\(([^)]*)\))/
   );
   if (result === null) {
     return line;
@@ -37,6 +39,20 @@ function parseLinksAndClasses(line) {
       <>
         {front}
         <span className={spanClass}>{parseLinksAndClasses(text)}</span>
+        {parseLinksAndClasses(back)}
+      </>
+    );
+  } else if (result[6] !== undefined) {
+    const full = result[1];
+    const command = result[6];
+    const text = result[7];
+    const [front, back] = line.split(full);
+
+    // recurse to catch multiple links cause why not
+    return (
+      <>
+        {front}
+        <CommandBtn command={command}>{parseLinksAndClasses(text)}</CommandBtn>
         {parseLinksAndClasses(back)}
       </>
     );

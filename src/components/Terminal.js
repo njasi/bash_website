@@ -2,14 +2,16 @@ import { useState, createRef } from "react";
 import { historyMove, runCommand, setHistoryIdx } from "../commands";
 import { arrayToOutput } from "./Results";
 import TermPrompt from "./TermPrompt";
+import { useDispatch, useSelector } from "react-redux";
+import { setCommand } from "../store/command";
 
 // generate a function to handle the command submitting
-function generateFormHandler(add, setCommand, setCursor) {
+function generateFormHandler(add, updateCommand, setCursor) {
   return async (event) => {
     event.preventDefault();
 
     const command = event.target.termInput.value;
-    setCommand("");
+    updateCommand("");
     setCursor(0);
     setHistoryIdx();
 
@@ -24,15 +26,15 @@ function generateFormHandler(add, setCommand, setCursor) {
   };
 }
 
-function generateKeyDownHandler(setCommand) {
+function generateKeyDownHandler(updateCommand) {
   return async (e) => {
     let key = e.which ? e.which : e.keyCode;
     switch (key) {
       case 38:
-        setCommand(await historyMove());
+        updateCommand(await historyMove());
         break;
       case 40:
-        setCommand(await historyMove(true));
+        updateCommand(await historyMove(true));
         break;
       default:
     }
@@ -55,22 +57,27 @@ function generateKeyUpHandler(setCursor) {
 const shift = 10;
 
 function Terminal({ outputState, add }) {
-  const [command, setCommand] = useState("");
   const [cursor, setCursor] = useState(0);
   const commandInput = createRef();
+  const dispatch = useDispatch();
+  const { command } = useSelector((state) => ({
+    command: state.command.value,
+  }));
+
+  const updateCommand = (value) => dispatch(setCommand(value));
 
   const output = arrayToOutput(outputState);
 
   const handleBlur = () => commandInput.current.focus();
   const handleChange = (event) => {
     setCursor(event.target.selectionStart);
-    setCommand(event.target.value);
+    updateCommand(event.target.value);
   };
 
   return (
     <main id="term-wrap">
       <header className="output">{output}</header>
-      <form onSubmit={generateFormHandler(add, setCommand, setCursor)}>
+      <form onSubmit={generateFormHandler(add, updateCommand, setCursor)}>
         <label htmlFor="term-input">
           <TermPrompt />
         </label>{" "}
@@ -78,7 +85,7 @@ function Terminal({ outputState, add }) {
           style={{ width: `${command.length + shift}ch` }}
           onBlur={handleBlur}
           onChange={handleChange}
-          onKeyDown={generateKeyDownHandler(setCommand)}
+          onKeyDown={generateKeyDownHandler(updateCommand)}
           onKeyUp={generateKeyUpHandler(setCursor)}
           ref={commandInput}
           id="termInput"

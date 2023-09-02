@@ -96,3 +96,8 @@ a:hover {
   white-space: pre-wrap;
   max-width: 100ch;
 }
+
+.commandBtn{
+  color: yellow;
+  cursor: pointer;
+}

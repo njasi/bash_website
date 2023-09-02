@@ -27,7 +27,7 @@ Reach out to me at [nick@jasinski3.com](mailto:nick@jasinski3.com)!
 
 Just for fun, this website is a simple bash emulator.
   Coming soon: redirection and piping (might fully remake with proper AST parsing)
-For a list of available commands please type "(class=green bold)(help)"
+For a list of available commands please type "(command=help)(help)"
 
 The source for this project is available at [github.com/njasi/bash_website](https://github.com/njasi/bash_website)
     `;
