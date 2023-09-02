@@ -16,7 +16,7 @@ I am a determined and hardworking person who genuinely enjoys solving problems a
 * (class=green)(Fullstack Academy, Chicago)              September 2019 - December 2020
 
 (class=cyan bold)(Experience):
-*
+* TODO copy from resume
 
 (class=cyan bold)(What I Bring to the Table):
   * Expertise in Python, TensorFlow2, C, C++, C#, Javascript, Node.js, React+Redux, Java, etc
@@ -26,7 +26,7 @@ I am a determined and hardworking person who genuinely enjoys solving problems a
 Reach out to me at [nick@jasinski3.com](mailto:nick@jasinski3.com)!
 
 Just for fun, this website is a simple bash emulator.
-  Coming soon: redirection and piping
+  Coming soon: redirection and piping (might fully remake with proper AST parsing)
 For a list of available commands please type "(class=green bold)(help)"
 
 The source for this project is available at [github.com/njasi/bash_website](https://github.com/njasi/bash_website)
