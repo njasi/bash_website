@@ -89,10 +89,10 @@ a:hover {
   font-weight: 900;
 }
 
-
 .result-line {
   margin: 0;
   padding: 0;
   min-height: 1rem;
   white-space: pre-wrap;
+  max-width: 100ch;
 }
