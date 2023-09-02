@@ -10,7 +10,6 @@ function App() {
     output: state.output.history,
   }));
 
-  console.log(output);
 
   const dispatch = useDispatch();
   const add = (value) => dispatch(addOutput(value));

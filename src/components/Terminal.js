@@ -4,12 +4,13 @@ import { arrayToOutput } from "./Results";
 import TermPrompt from "./TermPrompt";
 
 // generate a function to handle the command submitting
-function generateFormHandler(add, setCommand) {
+function generateFormHandler(add, setCommand, setCursor) {
   return async (event) => {
     event.preventDefault();
 
     const command = event.target.termInput.value;
     setCommand("");
+    setCursor(0);
     setHistoryIdx();
 
     const result = await runCommand(command);
@@ -51,6 +52,8 @@ function generateKeyUpHandler(setCursor) {
   };
 }
 
+const shift = 10;
+
 function Terminal({ outputState, add }) {
   const [command, setCommand] = useState("");
   const [cursor, setCursor] = useState(0);
@@ -67,12 +70,12 @@ function Terminal({ outputState, add }) {
   return (
     <main id="term-wrap">
       <header className="output">{output}</header>
-      <form onSubmit={generateFormHandler(add, setCommand)}>
+      <form onSubmit={generateFormHandler(add, setCommand, setCursor)}>
         <label htmlFor="term-input">
           <TermPrompt />
         </label>{" "}
         <input
-          style={{ width: `${command.length}ch` }}
+          style={{ width: `${command.length + shift}ch` }}
           onBlur={handleBlur}
           onChange={handleChange}
           onKeyDown={generateKeyDownHandler(setCommand)}
@@ -87,7 +90,7 @@ function Terminal({ outputState, add }) {
         ></input>
         <div
           className="cursor"
-          style={{ left: `-${command.length - cursor}ch` }}
+          style={{ left: `-${command.length - cursor + shift}ch` }}
         >
           █
         </div>
