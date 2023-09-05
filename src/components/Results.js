@@ -94,8 +94,13 @@ export default function Results({ prompt, command, result }) {
         : result === ""
         ? ""
         : result.split("\n").map((line, idx) => (
-            <p key={idx} className="result-line">
-              {parseLinksAndClasses(line)}
+            <p
+              key={idx}
+              className={`result-line ${
+                line.indexOf("  ") === 0 ? "tabbed" : ""
+              }`}
+            >
+              {parseLinksAndClasses(line.trim())}
             </p>
           ))}
     </div>

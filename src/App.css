@@ -93,11 +93,15 @@ a:hover {
   margin: 0;
   padding: 0;
   min-height: 1rem;
-  white-space: pre-wrap;
   max-width: 100ch;
 }
 
-.commandBtn{
+.commandBtn {
   color: yellow;
   cursor: pointer;
+}
+
+.tabbed {
+  position: relative;
+  left: 2ch;
 }

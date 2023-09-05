@@ -16,7 +16,14 @@ I am a determined and hardworking person who genuinely enjoys solving problems a
 * (class=green)(Fullstack Academy, Chicago)              September 2019 - December 2020
 
 (class=cyan bold)(Experience):
-* TODO copy from resume
+* (class=green)(Caltech IMSS Rep)                        April 2022 - June 2023
+  Provided technical support to peers at Caltech and managed public house devices.
+
+* (class=green)(ML Teaching Assistant)                   September 2021 - March 2022
+  Taught CS 12: TensorFlow, a fast-paced class in machine learning for both undergraduate and graduate students.
+
+* (class=green)(Frontend Software Engineer Intern)       July 2020 - September 2020
+  Worked with a designer through Figma and developed frontend functionality for the [Zette chrome extension](https://www.zette.com/).
 
 (class=cyan bold)(What I Bring to the Table):
   * Expertise in Python, TensorFlow2, C, C++, C#, Javascript, Node.js, React+Redux, Java, etc
