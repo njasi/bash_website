@@ -27,13 +27,13 @@ I am a determined and hardworking person who genuinely enjoys solving problems a
   Designed application interface and functionality with React
   Created & integration application with Python FastAPI Server.
 
-* (class=green)(Caltech IMSS Rep)                                                 April 2022 - June 2023
+* (class=green)(Caltech IMSS Rep @ Caltech)                                                 April 2022 - June 2023
   Provided technical support to peers at Caltech and managed public house devices.
 
-* (class=green)(ML Teaching Assistant)                                            September 2021 - March 2022
+* (class=green)(ML Teaching Assistant @ Caltech)                                            September 2021 - March 2022
   Taught CS 12: TensorFlow, a fast-paced class in machine learning for both undergraduate and graduate students.
 
-* (class=green)(Frontend Software Engineer Intern)                                July 2020 - September 2020
+* (class=green)(Frontend Software Engineer Intern @Zette)                                July 2020 - September 2020
   Worked with a designer through Figma and developed frontend functionality for the [Zette chrome extension](https://www.zette.com/).
 
 (class=cyan bold)(What I Bring to the Table):
