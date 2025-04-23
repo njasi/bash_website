@@ -25,7 +25,7 @@ I am a determined and hardworking person who genuinely enjoys solving problems a
 
 * (class=green)(Fullstack Software Engineer @ Lumair)                             5/6/2024 - 8/20/2024
   Designed application interface and functionality with React
-  Created & integration application with Python FastAPI Server.
+  Created & integrated application with Python FastAPI Server.
 
 * (class=green)(Caltech IMSS Rep @ Caltech)                                                 April 2022 - June 2023
   Provided technical support to peers at Caltech and managed public house devices.
