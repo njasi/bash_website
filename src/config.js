@@ -37,7 +37,7 @@ I am a determined and hardworking person who genuinely enjoys solving problems a
   Worked with a designer through Figma and developed frontend functionality for the [Zette chrome extension](https://www.zette.com/).
 
 (class=cyan bold)(What I Bring to the Table):
-  * Expertise in Python, TensorFlow2, C, C++, C#, Javascript, Java, Ocaml, Haskell, R, MatLab, Node.js, React+Redux
+  * Expertise in Python, TensorFlow2, C, C++, C#, Javascript, Java, Ocaml, PHP, Rust, Haskell, R, MatLab, Node.js, React+Redux
   * Strong problem-solving skills and a knack for turning ideas into reality.
   * Experience in working on difficult projects in teams
 
