@@ -18,22 +18,21 @@ I am a determined and hardworking person who genuinely enjoys solving problems a
 (class=cyan bold)(Experience):
 * (class=green)(Co-Founder & Lead Fullstack Developer @ ThoughtTree INC)           9/14/2024 - Now
   Created a robust application API with FastAPI and MongoDB & designed responsive and interactive user interfaces in React.
-  Integrated ThoughtTree's custom PatientPrompt framework into our API alongside ML engineers.
 
-* (class=green)(Programmer Analyst 2 @ UNM)                                       7/28/2024 - Now
+* (class=green)(Programmer Analyst 2 @ UNM)                                        7/28/2024 - Now
   Maintained and developed systems/websites for university staff and students.
 
-* (class=green)(Fullstack Software Engineer @ Lumair)                             5/6/2024 - 8/20/2024
+* (class=green)(Fullstack Software Engineer @ Lumair)                              5/6/2024 - 8/20/2024
   Designed application interface and functionality with React
   Created & integrated application with Python FastAPI Server.
 
-* (class=green)(Caltech IMSS Rep @ Caltech)                                                 April 2022 - June 2023
+* (class=green)(Caltech IMSS Rep @ Caltech)                                                  April 2022 - June 2023
   Provided technical support to peers at Caltech and managed public house devices.
 
-* (class=green)(ML Teaching Assistant @ Caltech)                                            September 2021 - March 2022
+* (class=green)(ML Teaching Assistant @ Caltech)                                             September 2021 - March 2022
   Taught CS 12: TensorFlow, a fast-paced class in machine learning for both undergraduate and graduate students.
 
-* (class=green)(Frontend Software Engineer Intern @Zette)                                July 2020 - September 2020
+* (class=green)(Frontend Software Engineer Intern @ Zette)                                   July 2020 - September 2020
   Worked with a designer through Figma and developed frontend functionality for the [Zette chrome extension](https://www.zette.com/).
 
 (class=cyan bold)(What I Bring to the Table):
